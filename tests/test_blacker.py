@@ -61,6 +61,34 @@ class TestBlackMethod(TestCase):
         a = gcl(s, v)
         self.assertEqual(a, ["black", "-", "--pyi"])
 
+    def test_get_target_version_default(self):
+        FILE_NAME = "test.py"
+
+        view = MagicMock()
+        sublime = MagicMock()
+        sublime.config = {
+            "black_target_version": None,
+        }
+        sublime.view.file_name.return_value = FILE_NAME
+
+        command_line = sublack.blacker.Black.get_command_line(sublime, view)
+
+        self.assertEqual(command_line, ["black", "-"])
+
+    def test_get_target_version(self):
+        FILE_NAME = "test.py"
+
+        view = MagicMock()
+        sublime = MagicMock()
+        sublime.config = {
+            "black_target_version": "py36",
+        }
+        sublime.view.file_name.return_value = FILE_NAME
+
+        command_line = sublack.blacker.Black.get_command_line(sublime, view)
+
+        self.assertEqual(command_line, ["black", "-", "-t", "py36"])
+
     def test_windows_prepare(self):
         with patch.object(sublack.blacker, "sublime") as m:
             m.platform.return_value = "linux"
