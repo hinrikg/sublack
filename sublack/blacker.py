@@ -175,6 +175,10 @@ class Black:
         if self.config.get("black_py36"):
             cmd.append("--py36")
 
+        # target version
+        if self.config.get("black_target_version"):
+            cmd.extend(["-t", self.config.get("black_target_version")])
+
         LOG.debug("command line: %s", cmd)
         return cmd
 
