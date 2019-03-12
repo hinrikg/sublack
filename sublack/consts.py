@@ -26,6 +26,7 @@ CONFIG_OPTIONS = [
     "black_log",
     "black_default_encoding",
     "black_py36",
+    "black_target_version",
     "black_use_blackd",
     "black_blackd_host",
     "black_blackd_port",
