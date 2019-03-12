@@ -233,12 +233,12 @@ contributions by:
 * `Jacobi Petrucciani  <https://github.com/jpetrucciani>`_
 * `Herr Kaste <https://github.com/kaste>`_ 
 * `Martinj Peters <https://github.com/mjpieters>`_
+* `Hinrik Gylfason <https://github.com/hinrikg>`_
 
 
 Todo
 ---------
 
-- target version
 - cors
 
 
