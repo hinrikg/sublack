@@ -23,6 +23,12 @@
       // force py36 syntax mode
       "black_py36": null,
 
+      // Control which Python version Black-formatted code should target.
+      // Can be any of "py27", "py33", "py34", "py35", "py36", "py37", "py38".
+      // The default is that black auto-detects the target version from the input file.
+      // (Requires Black version >= 19.2b0)
+      "black_target_version": null,
+
       // ##########################
       // Sublack specific options #
       // ##########################
